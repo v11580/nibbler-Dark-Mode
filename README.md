@@ -16,9 +16,9 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 * Shows Opening line name
 * Shows ECO transposition of individual fens
 * Built in training data: 10,000 mini games.
-* 1,000 Puzzles
+* 1,100 Puzzles
 * Upon loading, a random puzzle is shown
-* The puzzles consist of 600 ECM positions and 600 mate in 2s, all wtm.
+* The puzzles consist of 600 ECM positions and 500 mate in 2s, all wtm.
 * PGN loading via menu, clipboard, or drag-and-drop.
 * Press the letter P for a new Puzzle
 * Press the letter M for a new Mini game
