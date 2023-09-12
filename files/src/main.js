@@ -309,13 +309,31 @@ function menu_build() {
 				{
 					type: "separator"
 				},
+			
+			
+					{
+					label: "New Mini",
+					accelerator: "m",
+					click: () => {
+						win.webContents.send("call", "new_Mini");
+					}
+				},
+				
 				{
-					label: "New game",
+					label: "New Game",
 					accelerator: "CommandOrControl+N",
 					click: () => {
 						win.webContents.send("call", "new_game");
 					}
 				},
+					{
+					label: "New Puzzle",
+					accelerator: "p",
+					click: () => {
+						win.webContents.send("call", "new_Puzzle");
+					}
+				},
+
 				{
 					label: "New 960 game",
 					accelerator: "CommandOrControl+Shift+N",
@@ -347,6 +365,17 @@ function menu_build() {
 						}
 					}
 				},
+					/*****************/
+				{
+					label: "New pgn",	
+					accelerator: "b",
+					click: () => {
+						win.webContents.send("call", "new_PGN")
+						//{		args: ["2"], //});
+					}						// it won't, because we prevent the initial close...)
+				},
+				/*****************/	
+				
 				{
 					type: "separator"
 				},
@@ -1714,6 +1743,18 @@ function menu_build() {
 								});
 							}
 						},
+							{
+							label: "19",
+							type: "checkbox",
+							checked: config.info_font_size === 19,
+							click: () => {
+								set_checks("Sizes", "Infobox font", "19");
+								win.webContents.send("call", {
+									fn: "set_info_font_size",
+									args: [19],
+								});
+							}
+						},
 						{
 							label: "18",
 							type: "checkbox",
@@ -1871,6 +1912,30 @@ function menu_build() {
 								});
 							}
 						},
+												{
+							label: "700",
+							type: "checkbox",
+							checked: config.board_size === 700,
+							click: () => {
+								set_checks("Sizes", "Board", "700");
+								win.webContents.send("call", {
+									fn: "set_board_size",
+									args: [700],
+								});
+							}
+						},
+						{
+							label: "670",
+							type: "checkbox",
+							checked: config.board_size === 670,
+							click: () => {
+								set_checks("Sizes", "Board", "670");
+								win.webContents.send("call", {
+									fn: "set_board_size",
+									args: [670],
+								});
+							}
+						},
 						{
 							label: "640",
 							type: "checkbox",
@@ -1928,18 +1993,6 @@ function menu_build() {
 								win.webContents.send("call", {
 									fn: "set_board_size",
 									args: [448],
-								});
-							}
-						},
-						{
-							label: "416",
-							type: "checkbox",
-							checked: config.board_size === 416,
-							click: () => {
-								set_checks("Sizes", "Board", "416");
-								win.webContents.send("call", {
-									fn: "set_board_size",
-									args: [416],
 								});
 							}
 						},
@@ -4127,17 +4180,6 @@ function menu_build() {
 								win.webContents.send("call", {
 									fn: "toggle",
 									args: ["clear_log"],
-								});
-							}
-						},
-						{
-							label: "Use unique logfile each time",
-							type: "checkbox",
-							checked: config.logfile_timestamp,
-							click: () => {
-								win.webContents.send("call", {
-									fn: "toggle",
-									args: ["logfile_timestamp"],
 								});
 							}
 						},
