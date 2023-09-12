@@ -2,16 +2,18 @@ html {
 	height: 100%;
 }
 
+/*55_winrate line 45  "#524839";**/
+
 body {
-	background-color: #080808;
+	background-color: #1a1a1a;#080808;
 	border: 0;
-	color: #eeeeee;
+	color: #bababa; 
 	cursor: default;
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
 	pointer-events: none;		/* These must be overriden for things that need pointer / select */
-	user-select: none;			/* These must be overriden for things that need pointer / select */
+	u00ser-select: none;			/* These must be overriden for things that need pointer / select */
 }
 
 ::-webkit-scrollbar {
@@ -21,8 +23,10 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	pointer-events: auto;
-	background-color: #444444;
+	background-color: #222323;
 }
+/*lm disp*.move_squares_with_alpha, #move_squares_with_alpha {background-image:radial-gradient(transparent 59%,rgba(0,0,0,.18) 60%,rgba(209,209,30,.5019607843) 61%,rgba(209,209,30,.5019607843) 70%,rgba(0,0,0,.18) 71%,transparent 72%);opacity:72%;} */
+
 
 #gridder {
 	display: grid;
@@ -49,48 +53,53 @@ body {
 }
 
 #boardsquares {
+	border-radius:5px;
 	grid-area: a;
-	margin: 1em 0 0 1em;
-	background-size: cover;
+	margin: 2em 0 0 15em;
+		background-size: cover;
 	border-collapse: collapse;
 	table-layout: fixed;
-	z-index: 1;
+	z-index: 2;
+	cursor:pointer;
 }
 
 #canvas {
 	grid-area: a;
-	margin: 1em 0 0 1em;
+	margin: 2em 0 0 15em;
 	display: block;
 	outline-offset: 6px;
 	z-index: 2;
+	font-family: consolas, monospace;
 }
 
 #boardfriends {
 	grid-area: a;
-	margin: 1em 0 0 1em;
+	margin: 2em 0 0 15em;
 	border-collapse: collapse;
 	pointer-events: auto;
 	table-layout: fixed;
 	z-index: 3;
+	cursor:pointer;
 }
 
 #statusbox {
 	grid-area: c;
-	margin: 0 0 0 1em;
+	margin: 0 0 0 14em;
 	border: none;
-	display: block;
-	font-family: monospace, monospace;
+	0display: block;
+	font-family: consolas, monospace;
 	pointer-events: auto;
 	overflow: hidden;
 	white-space: pre;
+	font-size: 90%; 
 }
 
-#infobox {
-	grid-area: d;
-	margin: 1em 1em 0 1em;
+#infobox {       //shows pv lines
+	grid-area: d;    /*75_looker**/
+	margin: 1em 1em 0 3em;
 	display: block;
 	color: #cccccc;						/* only used for Lc0 stderr output at startup */
-	font-family: monospace, monospace;
+	font-family: "CA Chess2", "FigurineCB ArieSP", consolas, monospace; font-weight: 400px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
@@ -102,41 +111,85 @@ body {
 	grid-area: e;
 	align-self: end;
 	display: block;
-	margin: 10px 0 0 1em;
+	margin: 21px 0 0 1em;
 	pointer-events: auto;
+	color:#446445;
 }
 
 input[type=text]:focus {
-	outline: 2px dashed gray;
-	outline-offset: 4px;
+	outline: 1px gray;
+	outline-offset: 1px;
 }
 
-#fenbox {
+#fenbox { 
 	grid-area: f;
-	margin: 1em 1em 0 1em;
-	background-color: #080808;
+	margin: -1em 1em 0 13.5em;
+	background-color: #1a1a1a;
 	border: none;
 	caret-color: white;
-	color: #6cccee;
-	display: block;
-	font-family: monospace, monospace;
-	font-size: 100%;
+	color: #242424; 
+	d-isplay: block;
+	font-family: consolas, monospace;
+	font-size: 50%;
 	pointer-events: auto;
 	user-select: auto;
 }
 
 #movelist {
 	grid-area: g;
-	margin: 1em 1em 1em 1em;
+	margin: 1em 15em 1em 13.5em;
 	display: block;
-	color: #999999;
-	font-family: monospace, monospace;
+	color: #677; /*variation*/
+	font-family: consolas, monospace;
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
 	pointer-events: auto;
 	white-space: pre-wrap;
+
 }
+#ECO {
+	grid-area: f;
+	margin: 3em 15em 1em 15.9em;
+	display: block;
+	color: #666;
+	font-size: 95%;
+	font-family: consolas, monospace;
+	overflow-x: hidden;
+	overflow-y: auto;
+	pointer-events: auto;
+	white-space: pre-wrap;
+
+}
+
+.econame {
+   /* display: block;*/
+    width: 340px;
+	margin-bottom:-15px;
+    position: absolute;
+    /*left: 60;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	cursor:default;
+	color:#666665;
+	font-size:91%;
+}
+
+#ECOtr{ 	
+	grid-area: f;
+	margin: 3.2em 10em -1em 47em;
+	display: block;
+	font-size: 95%;
+	font-family: consolas, monospace;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	pointer-events: auto;
+	color: #686;
+	white-space: pre-wrap;
+
+}
+
 
 #promotiontable {
 	border-collapse: collapse;
@@ -177,7 +230,7 @@ td {
 }
 
 a, a:link, a:visited, a:hover, a:active {	/* I think this is now only used for the "Nibbler in normal browser" message. */
-	color: #6cccee;
+	color: #ffffCC; #6cccee; 
 }
 
 ul {
@@ -185,18 +238,18 @@ ul {
 }
 
 .pink {
-	color: #ffaaaa;
+	color: rgba(150,130,110, .99); #877c6c; #9c7c55;  #877c6c; #ffaaaa;  /* 82_infobox black move colors*/
 }
 
 .white {
-	color: #eeeeee;
+	color:  #bdbdbd;  /* 82_infobox & movelist white move colors*/
 }
 
 .gray {
 	color: #999999;
 }
 
-.darkgray {
+.darkgray { font-size:85%;
 	color: #666666;
 }
 
@@ -205,15 +258,18 @@ ul {
 }
 
 .yellow {
-	color: #ffff00;
+	color: #ffffdd; font-size:89%; !important;
 }
 
 .green {
-	color: #66ff66;
+	color: #668866;
 }
 
-.blue {
-	color: #6cccee;
+.blue {  /********pv score**********/
+	color: #678; #829bbd;
+}
+.liGreen {
+	color: #639363; font-size:85%; /***75_looker* Lichess freq. it's really green**/
 }
 
 .infoline {
@@ -230,26 +286,387 @@ ul {
 
 .pgnchooser:hover {
 	background-color: #202020;
+	cursor:pointer; 
 }
 
 .ocm_highlight {
-	background-color: #770000;
+	background-color: #444;  cursor:pointer;
+
 }
 
 .hover_highlight {
-	background-color: #222244;
+	background-color: #444;
+  /*analysis line */
 }
 
-span.movelist_highlight_blue {
-	background-color: #222244;
-	color: #6cccee;
+span.movelist_highlight_blue { /*pgn current move -- brown*/
+	background-color:#524839;
+	color: #EEE; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
+	
 }
 
 span.movelist_highlight_yellow {
 	background-color: #444422;
-	color: #ffff00;
+	color: #99cccc;  border-radius: 2px;
 }
 
 span.nobr {
 	white-space: nowrap;				/* Used for O-O and O-O-O moves */
+}
+
+span {
+ cursor:pointer;
+}
+
+
+/* Opening */
+
+
+.line .name {  
+    display: block;
+    width: 360px;
+    position: absolute;
+    /*left: 60;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	cursor:default;
+	color:#666665;
+  
+}
+html {
+	height: 100%;
+}
+
+/*55_winrate line 45  "#524839";**/
+
+body {
+	background-color: #1a1a1a;#080808;
+	border: 0;
+	color: #bababa; 
+	cursor: default;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	pointer-events: none;		/* These must be overriden for things that need pointer / select */
+	u00ser-select: none;			/* These must be overriden for things that need pointer / select */
+}
+
+::-webkit-scrollbar {
+	pointer-events: auto;
+	background-color: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+	pointer-events: auto;
+	background-color: #222323;
+}
+/*lm disp*.move_squares_with_alpha, #move_squares_with_alpha {background-image:radial-gradient(transparent 59%,rgba(0,0,0,.18) 60%,rgba(209,209,30,.5019607843) 61%,rgba(209,209,30,.5019607843) 70%,rgba(0,0,0,.18) 71%,transparent 72%);opacity:72%;} */
+
+
+#gridder {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content min-content 1fr;
+	grid-template-areas:
+		"a b"
+		"f f"
+		"g g";
+}
+
+#rightgridder {
+	grid-area: b;
+	display: grid;
+	margin: 1em 0 0 0;
+	height: 0;							/* js needs to keep this equal to the boardsize */
+	grid-template-columns: none;
+	grid-template-rows: min-content 1fr min-content;
+	grid-template-areas:
+		"c"
+		"d"
+		"e";
+}
+
+#boardsquares {
+	border-radius:5px;
+	grid-area: a;
+	margin: 2em 0 0 15em;
+		background-size: cover;
+	border-collapse: collapse;
+	table-layout: fixed;
+	z-index: 2;
+	cursor:pointer;
+}
+
+#canvas {
+	grid-area: a;
+	margin: 2em 0 0 15em;
+	display: block;
+	outline-offset: 6px;
+	z-index: 2;
+	font-family: consolas, monospace;
+}
+
+#boardfriends {
+	grid-area: a;
+	margin: 2em 0 0 15em;
+	border-collapse: collapse;
+	pointer-events: auto;
+	table-layout: fixed;
+	z-index: 3;
+	cursor:pointer;
+}
+
+#statusbox {
+	grid-area: c;
+	margin: 0 0 0 14em;
+	border: none;
+	0display: block;
+	font-family: consolas, monospace;
+	pointer-events: auto;
+	overflow: hidden;
+	white-space: pre;
+	font-size: 90%; 
+}
+
+#infobox {       //shows pv lines
+	grid-area: d;    /*75_looker**/
+	margin: 1em 1em 0 3em;
+	display: block;
+	color: #999;						/* only used for Lc0 stderr output at startup */
+	font-family: "CA Chess2", "FigurineCB ArieSP", consolas, monospace; font-weight: 400px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
+	pointer-events: auto;
+	white-space: pre-wrap;
+}
+
+#graph {
+	grid-area: e;
+	align-self: end;
+	display: block;
+	margin: 21px 0 0 1em;
+	pointer-events: auto;
+	color:#446445;
+}
+
+input[type=text]:focus {
+	outline: 1px gray;
+	outline-offset: 1px;
+}
+
+#fenbox { 
+	grid-area: f;
+	margin: -1em 1em 0 13.5em;
+	background-color: #1a1a1a;
+	border: none;
+	caret-color: white;
+	color: #242424; 
+	d-isplay: block;
+	font-family: consolas, monospace;
+	font-size: 50%;
+	pointer-events: auto;
+	user-select: auto;
+}
+
+#movelist {
+	grid-area: g;
+	margin: 1em 15em 1em 13.5em;
+	display: block;
+	color: #677; /*variation*/
+	font-family: consolas, monospace;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
+	pointer-events: auto;
+	white-space: pre-wrap;
+
+}
+#ECO {
+	grid-area: f;
+	margin: 3em 15em 1em 15.9em;
+	display: block;
+	color: #666;
+	font-size: 95%;
+	font-family: consolas, monospace;
+	overflow-x: hidden;
+	overflow-y: auto;
+	pointer-events: auto;
+	white-space: pre-wrap;
+
+}
+
+.econame {
+   /* display: block;*/
+    width: 340px;
+	margin-bottom:-15px;
+    position: absolute;
+    /*left: 60;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	cursor:default;
+	color:#666665;
+	font-size:91%;
+}
+
+#ECOtr{ 	
+	grid-area: f;
+	margin: 3.2em 10em -1em 47em;
+	display: block;
+	font-size: 95%;
+	font-family: consolas, monospace;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	pointer-events: auto;
+	color: #686;
+	white-space: pre-wrap;
+
+}
+
+
+#promotiontable {
+	border-collapse: collapse;
+	display: none;
+	pointer-events: auto;
+	position: fixed;
+	table-layout: fixed;
+	z-index: 4;
+}
+
+#fullbox {
+	background-color: #080808;
+	display: none;						/* better than visibility: hidden - never intercepts inputs */
+	font-family: monospace, monospace;
+	font-size: 100%;
+	height: 100%;
+	left: 0;
+	overflow-y: auto;
+	pointer-events: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 6;
+}
+
+#fullbox_content {
+	overflow: hidden;
+	padding: 1em;
+	white-space: pre;
+}
+
+td {
+	background-color: transparent;
+	background-size: contain;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {	/* I think this is now only used for the "Nibbler in normal browser" message. */
+	color: #ffffCC; #6cccee; 
+}
+
+ul {
+	list-style: none;
+}
+
+.pink {
+	color: rgba(150,130,110, .99); #877c6c; #9c7c55;  #877c6c; #ffaaaa;  /* 82_infobox black move colors*/
+}
+
+.white {
+	color:  #bdbdbd;  /* 82_infobox & movelist white move colors*/
+}
+
+.gray {
+	color: #999999;
+}
+
+.darkgray { font-size:85%;
+	color: #666666;
+}
+
+.red {
+	color: #ff6666;
+}
+
+.yellow {
+	color: #ffffdd; font-size:89%; !important;
+}
+
+.green {
+	color: #668866;
+}
+
+.blue {  /********pv score**********/
+	color: #678; #829bbd;
+}
+.liGreen {
+	color: #639363; font-size:85%; /***75_looker* Lichess freq. it's really green**/
+}
+
+.infoline {
+	margin-bottom: 1em;
+}
+
+.enginechooser {
+	margin-bottom: 1em;
+}
+
+.enginechooser:hover {
+	color: #6cccee;
+}
+
+.pgnchooser:hover {
+	background-color: #202020;
+	cursor:pointer; 
+}
+
+.ocm_highlight {
+	background-color: #444;  cursor:pointer;
+
+}
+
+.hover_highlight {
+	background-color: #444;
+  /*analysis line */
+}
+
+span.movelist_highlight_blue { /*pgn current move -- brown*/
+	background-color:#524839;
+	color: #EEE; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
+	
+}
+
+span.movelist_highlight_yellow {
+	background-color: #444422;
+	color: #99cccc;  border-radius: 2px;
+}
+
+span.nobr {
+	white-space: nowrap;				/* Used for O-O and O-O-O moves */
+}
+
+span {
+ cursor:pointer;
+}
+
+
+/* Opening */
+
+
+.line .name {  
+    display: block;
+    width: 360px;
+    position: absolute;
+    /*left: 60;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	cursor:default;
+	color:#666665;
+  
 }
