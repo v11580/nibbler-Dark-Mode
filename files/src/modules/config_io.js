@@ -40,8 +40,8 @@ exports.defaults = {
 	"graph_line_width": 2,
 	"graph_minimum_length": 41,					// Desired depth + 1
 
-	"light_square": "#dadada",
-	"dark_square": "#b4b4b4",
+	"light_square": "rgba(80, 123, 90, .96)",
+	"dark_square": "rgba(80, 123, 90, .87)",
 	"active_square": "#66aaaa",
 	"move_squares_with_alpha": "#ffff0026",
 
