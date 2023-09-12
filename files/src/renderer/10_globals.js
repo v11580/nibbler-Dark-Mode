@@ -30,7 +30,7 @@ try {
 }
 
 // Requires.........................................................
-const ecoDATA = require("././N_DATA/eco.json"); 
+const ecoDATA = require("./modules/eco.json"); 
 const background = require("./modules/background");
 const child_process = require("child_process");
 const clipboard = require("electron").clipboard;
