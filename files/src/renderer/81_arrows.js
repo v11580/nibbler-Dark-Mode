@@ -168,7 +168,7 @@ let arrow_props = {
 				} else if (info_list[i].move === show_move && show_move_was_forced) {
 					colour = config.terrible_colour;
 				} else if (info_list[i].__touched === false) {
-					colour = config.terrible_colour;
+					colour = 'rgb(224,224,180)';
 				} else if (info_list[i] === best_info) {
 					colour = config.best_colour;
 				} else if (loss < config.bad_move_threshold) {
@@ -338,11 +338,11 @@ let arrow_props = {
 			}
 
 			if (o.info.__touched === false) {
-				s = "?";
+				s = "";
 			}
 
 			if (show_move_was_forced && o.info.move === show_move) {
-				s = "?";
+				s = "";
 			}
 
 			boardctx.fillText(s, cc2.cx, cc2.cy + 1);
