@@ -22,7 +22,7 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 * PGN loading via menu, clipboard, or drag-and-drop.
 * Press the letter P for a new Puzzle
 * Press the letter M for a new Mini game
-* See screenshot here:  https://https://chesscalisthenics.com/IMG/nibblerShot.png
+* See screenshot here:  https://chesscalisthenics.com/IMG/nibblerShot.png
 
 
 ## Installation - Windows / Linux
