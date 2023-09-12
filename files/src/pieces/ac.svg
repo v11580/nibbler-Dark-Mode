@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="230mm" height="230mm" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 230 230">
+ <defs>
+    <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="108.301" y1="184.318" x2="150.296" y2="140.024">
+     <stop offset="0" stop-color="white"/>
+     <stop offset="0.490196" stop-color="#DCDDDF"/>
+     <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="47.9731" y1="145.553" x2="150.232" y2="37.698">
+     <stop offset="0" stop-color="white"/>
+     <stop offset="0.360784" stop-color="#DCDDDF"/>
+     <stop offset="0.368627" stop-color="white"/>
+     <stop offset="1" stop-color="white"/>
+    </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon fill="#1F1A17" fill-opacity="0.301961" points="154.237,141.773 176.862,194.401 134.212,212.736 111.617,160.177 81.7693,187.096 82.1593,32.5771 194.557,138.607 "/>
+  <g id="_20219616">
+   <polygon id="_149301144" fill="#1F1A17" points="139.131,126.27 165.129,186.744 122.478,205.079 96.4765,144.596 114.804,128.181 "/>
+   <polygon id="_148056544" fill="url(#id0)" stroke="#1F1A17" stroke-width="0.0762" points="136.56,130.528 159.817,184.626 124.596,199.768 101.339,145.669 116.484,132.105 "/>
+   <polygon id="_149542648" fill="#1F1A17" points="70.4258,24.9205 182.824,130.95 118.171,136.028 70.0369,179.44 "/>
+   <polygon id="_149177696" fill="url(#id1)" points="74.4456,34.2711 173.415,127.633 116.484,132.105 74.1031,170.328 "/>
+  </g>
+ </g>
+</svg>
