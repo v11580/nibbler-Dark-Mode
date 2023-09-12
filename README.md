@@ -8,21 +8,21 @@ These days, Nibbler more-or-less works with traditional engines like [Stockfish]
 
 For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nibbler/releases) section. For help, the [Discord](https://discordapp.com/invite/pKujYxD) may be your best bet, or open an issue here.
 
-![Screenshot](https://user-images.githubusercontent.com/16438795/190862093-f6a9b37e-cad3-418a-8b70-521000bef778.png)
 
+![Screenshot](https://https://chesscalisthenics.com/IMG/nibblerShot.png)
 ## Features
 
-* Display Leela's top choices graphically.
-* Winrate graph.
-* Optionally shows Leela statistics like N, P, Q, S, U, V, and WDL for each move.
-* UCI `searchmoves` functionality.
-* Automatic full-game analysis.
-* Play against Leela from any position.
-* Leela self-play from any position.
+* Figurine piece designations in notation
+* Shows Opening line name
+* Shows ECO transposition of individual fens
+* Built in training data: 10,000 mini games.
+* 1,000 Puzzles
+* Upon loading, a random puzzle is shown
+* The puzzles consist of 600 ECM positions and 600 mate in 2s, all wtm.
 * PGN loading via menu, clipboard, or drag-and-drop.
-* Supports PGN variations of arbitrary depth.
-* FEN loading.
-* Chess 960.
+* Press the letter P for a new Puzzle
+* Press the letter M for a new Mini game
+
 
 ## Installation - Windows / Linux
 
