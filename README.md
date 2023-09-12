@@ -11,6 +11,7 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 ![Screenshot](https://https://chesscalisthenics.com/IMG/nibblerShot.png)
 ## Features
+See screenshot here:  https://https://chesscalisthenics.com/IMG/nibblerShot.png
 
 * Figurine piece designations in notation
 * Shows Opening line name
