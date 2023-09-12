@@ -42,7 +42,7 @@ function NewGrapher() {
 
 		// Draw our normal runs...
 
-		graphctx.strokeStyle = "white";
+		graphctx.strokeStyle = "#524839";
 		graphctx.lineWidth = config.graph_line_width;
 		graphctx.setLineDash([]);
 
@@ -167,7 +167,7 @@ function NewGrapher() {
 
 		let x = Math.floor(width * node.depth / node.graph_length_knower.val) + pixel_x_adjustment;
 
-		graphctx.strokeStyle = node.is_main_line() ? "#6cccee" : "#ffff00";
+		graphctx.strokeStyle = node.is_main_line() ? "#524839" : "#ffffdd";
 		graphctx.lineWidth = config.graph_line_width;
 		graphctx.setLineDash([config.graph_line_width, config.graph_line_width]);
 
