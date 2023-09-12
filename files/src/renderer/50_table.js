@@ -176,7 +176,7 @@ const info_prototype = {
 
 	cp_string: function(pov) {
 		if (!this.__touched || typeof this.cp !== "number") {
-			return "?";
+			return "";  /**redone--   if no score value returned*/
 		}
 		if (this.leelaish && this.n === 0) {
 			return "?";
