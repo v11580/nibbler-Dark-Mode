@@ -9,7 +9,7 @@ These days, Nibbler more-or-less works with traditional engines like [Stockfish]
 For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nibbler/releases) section. For help, the [Discord](https://discordapp.com/invite/pKujYxD) may be your best bet, or open an issue here.
 
 
-![Screenshot](https://https://chesscalisthenics.com/IMG/nibblerShot.png)
+![Screenshot](https://chesscalisthenics.com/IMG/nibblerShot.png)
 ## Features
 
 * Figurine piece designations in notation
