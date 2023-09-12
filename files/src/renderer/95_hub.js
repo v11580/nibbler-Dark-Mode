@@ -1,7 +1,7 @@
 "use strict";
-
+<!--Tuesday, September 12, 2023 8:33 AM-->
 function NewHub() {
-
+ // for Start position see 51_node.js
 	let hub = Object.create(null);
 
 	hub.engine = NewEngine(hub);						// Just a dummy object with no exe. Fixed by start.js later.
@@ -31,11 +31,14 @@ function NewHub() {
 
 	hub.looker.add_to_queue(hub.tree.node.board);		// Maybe make initial call to API such as ChessDN.cn...
 	Object.assign(hub, hub_props);
+hub.pgnLoaded = null;
+	
 	return hub;
+	
 }
 
 let hub_props = {
-
+		
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Core methods wrt our main state...
 
@@ -140,7 +143,33 @@ let hub_props = {
 		this.hoverdraw_div = -1;
 		this.position_change_time = performance.now();
 		fenbox.value = this.tree.node.board.fen(true);
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+		var fenny = fenbox.value.replace(/^(.+?)(\s[b,w]).+/, "$1$2");
+		document.getElementById("ECOtr").innerHTML = "";
+
+//const ecoDATA = require("././N_DATA/eco.json");  line 33 10_global.js    const ecoDATA = require("./N_DaTA/eco.json");	
+const getEco = (ecoData) => {
+  const entries = [];
+  for (var key in ecoData) {
+	  //key = key.replace(/<\sb\s.+:"/, "").replace(/<\sw\s.+(:")/, "$1");  
+    if (key === fenny) {
+      const eco = ecoData[key]["eco"];
+      const trName = ecoData[key]["name"];
+      entries.push([eco, trName]);
+    }
+  }
+  return entries;
+};
+
+const ecoData = getEco(ecoDATA);
+
+if (ecoData.length > 0) {
+  const eco = ecoData[0][0];
+  const trName = ecoData[0][1];
+  document.getElementById("ECOtr").innerHTML = `<span>${eco + ': ' + trName}</span>`;
+} 
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		if (new_game_flag) {
 			this.node_to_clean = null;
 			this.leela_lock_node = null;
@@ -392,7 +421,7 @@ let hub_props = {
 		// So, everything matches and we can use the PV...
 
 		let nextmove = pv[moves.length];
-		pv = pv.slice(moves.length);
+		pv = pv.slice(moves.length);  	
 
 		let new_info = NewInfo(node.board, nextmove);
 		new_info.set_pv(pv);
@@ -467,7 +496,7 @@ let hub_props = {
 		let did_hoverdraw = this.hoverdraw();
 
 		if (did_hoverdraw) {
-			canvas.style.outline = "2px dashed #b4b4b4";
+			canvas.style.outline = "2px dashed #121314";
 		} else {
 			this.hoverdraw_div = -1;
 			boardfriends.style.display = "block";
@@ -1049,6 +1078,9 @@ let hub_props = {
 			return;
 		}
 
+
+
+		
 		if (s.startsWith("uciok")) {
 
 			// Until we receive uciok and readyok, set_behaviour() does nothing and set_search_desired() ignores calls, so "go" cannot have been sent.
@@ -1101,7 +1133,7 @@ let hub_props = {
 			this.info_handler.err_receive(HighlightString(s, "Found pb network file: ", "blue"));
 			return;
 		}
-
+		
 		this.info_handler.err_receive(s);
 	},
 
@@ -1596,22 +1628,116 @@ let hub_props = {
 	},
 
 	// ---------------------------------------------------------------------------------------------------------------------
+	
+	
+	// ----------------------------- DATA CALL----------------------------------------------------------------------------------------
 
+	new_Puzzle: function() {  /** n key to load epds**/
+	   document.getElementById("ECO").innerHTML= ''; 
+		var a = Math.floor((Math.random() * 610) + 1); 
+		this.load_fen(EPDs[a])
+	//setTimeout(() => { this.set_behaviour("analysis_free");}, 50);
+		//this.set_behaviour("analysis_free");
+	
+		
+	},
+
+	new_PGN: function(gNo) { 	// 9-10
+	document.getElementById("ECO").innerHTML = '';
+	if (this.pgndata == null || this.pgnLoaded == null ) {this.new_Mini(RandInt(1,10017)); }// lower than 637 are eco lines. 
+else {
+	{ gNo = Math.floor(Math.random() * this.pgndata.count()); }
+			this.load_pgn_object(this.pgndata.getrecord(gNo));  console.log(`game no `+ gNo)
+			  //this.replaceUnicode(element); //console.log(this.pgndata.getrecord(gNo))
+			setTimeout(() => {  
+				const element = document.getElementById('movelist');  
+			var innerText = element.textContent;  
+			innerText = this.replaceUnicode(innerText)
+			var line0 = innerText.substring(0, 120);
+			this.ecoWriter(line0); //console.log(line0)
+				}, 90);  
+ 
+}
+},
+
+	new_Mini: function(k) {   /**W or ^+N key***/
+		document.getElementById("ECO").innerHTML= ''; 
+		this.pgndata == null; 
+		if (k === undefined) {
+			//var k  = Math.floor((Math.random() * 10017) + 1);   //RandInt(0, pgni.length); r
+			var k = RandInt(1,10017)
+		}		
+		var line0 = pgni[k];	
+		this.load_pgn_from_string(line0); k = k + 1;
+		setTimeout(() => {this.ecoWriter(line0); }, 90); console.log('Mini line no ' + k);
+	},
+	
+	
+			
+
+ 	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ENDS  DATA Call>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+
+
+	// ---------------------------------------------------------------------------------------------------------------------
+
+ ecoWriter: function (line0,gNo) {  // modified version from https://github.com/hxim/PeshkaChess
+	// if (gNo == null) {gNo = 0}
+	var   elem = document.getElementById("ECO");
+  while (elem.firstChild) elem.removeChild(elem.firstChild);
+  var list = [], lengthMatch = 0, indexMatch = -1;
+  for (var i = 0; i < _open.length; i++) {
+    if (line0.indexOf(_open[i][2]) == 0 && _open[i][2].length > lengthMatch) {
+      indexMatch = i;
+      lengthMatch = _open[i][2].length;
+    }
+  }
+  if (indexMatch >= 0) {
+    list.push({name:" ☙ " + _open[indexMatch][0]+" "+_open[indexMatch][1],score:_open[indexMatch][3]+"%",popularity:(_open[indexMatch][4]/100).toFixed(2)+"%",moves:_open[indexMatch][2]});
+  }
+  for (var i = 0; i < _open.length; i++) {
+    if ((line0.length >10 ) && _open[i][2].indexOf(line0) == 0 && list.length < 64) {
+      list.push({name:_open[i][0]+" "+_open[i][1],score:_open[i][3]+"%",popularity:(_open[i][4]/100).toFixed(2)+"%  ☙ ",moves:_open[i][2]});
+    }
+  }
+  for (var i = 0; i < list.length; i++) {
+    var node1 = document.createElement("DIV");
+    node1.className = "line";
+    var node2 = document.createElement("SPAN");
+	var node3 = document.createElement("id");
+    node2.className = "name";
+    node2.appendChild(document.createTextNode( list[i].score + '   ' + list[i].popularity + '  ' + list[i].name));
+
+    node1.appendChild(node2); 
+				var nodeY = document.createElement("DIV");
+			nodeY.appendChild(document.createTextNode(gNo));
+    if (indexMatch >= 0 && i == 0) {
+      node1.style.color = "#666688";
+    elem.appendChild(node1); 
+  }
+  } 
+		},
+
+
+	// ----------------------------------END ecoWriter-----------------------------------------------------------------------------------
+	
 	new_game: function() {
 		this.load_fen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+			document.getElementById("ECO").innerHTML = '';
 	},
 
 	new_960: function(n) {
 		if (n === undefined) {
 			n = RandInt(0, 960);
 		}
+			document.getElementById("ECO").innerHTML = '';
 		this.load_fen(c960_fen(n), true);
 	},
-
-	// ---------------------------------------------------------------------------------------------------------------------
+	// ----------------------------------END ecoWriter-----------------------------------------------------------------------------------
 
 	pgn_to_clipboard: function() {
 		PGNToClipboard(this.tree.node);
+
 	},
 
 	save: function(filename) {
@@ -1639,8 +1765,8 @@ let hub_props = {
 				loader.shutdown();
 			}
 		}
-
-		console.log(`Loading PGN: ${filename}`);
+   
+		//console.log(`Loading PGN: ${filename}`); 
 
 		let loader = NewFastPGNLoader(filename, (err, pgndata) => {
 			if (!err) {
@@ -1660,26 +1786,27 @@ let hub_props = {
 			return;
 		}
 		if (pgndata.count() === 1) {
-			let success = this.load_pgn_object(pgndata.getrecord(0));
+			let success = this.load_pgn_object(pgndata.getrecord(0)); 
 			if (success) {
-				this.pgndata = pgndata;
+				this.pgndata = pgndata;   
 				this.pgn_choices_start = 0;
 			}
 		} else {
 			this.pgndata = pgndata;
 			this.pgn_choices_start = 0;
 			this.show_pgn_chooser();
+			this.pgnLoaded = 'yes';   /***redone**?????*/
 		}
 	},
 
 	load_pgn_object: function(o) {				// Returns true or false - whether this actually succeeded.
 
-		let root_node;
+	let root_node;
 
 		try {
 			root_node = LoadPGNRecord(o);
 		} catch (err) {
-			alert(err);
+			alert('PGN file failed; try again.');
 			return false;
 		}
 
@@ -1779,12 +1906,24 @@ let hub_props = {
 		}
 		ipcRenderer.send("ack_book", msg);
 	},
-
+	
+	
+	replaceUnicode: function(s) {    /***REDONE replace***/
+  return s
+    .replace(/♗/g, 'B')
+    .replace(/♖/g, 'R')
+    .replace(/♘/g, 'N')
+    .replace(/♔/g, 'K')
+    .replace(/♕/g, 'Q')
+    .replace(/\.\?/g, '')
+    .replace(/\?/g, '');
+},
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Loading from clipboard or fenbox...
 
 	load_fen_or_pgn_from_string: function(s) {
 		if (typeof s !== "string") return;
+		s = this.replaceUnicode(s);  /***REDONE replace***/
 		s = s.trim();
 		try {
 			LoadFEN(s);			// Used as a test. Throws on any error.
@@ -1792,6 +1931,10 @@ let hub_props = {
 		} catch (err) {
 			this.load_pgn_from_string(s);
 		}
+	
+	document.getElementById("ECO").innerHTML= ''; // cleanUP
+	setTimeout(() => {this.ecoWriter(s); }, 90); 
+
 	},
 
 	load_pgn_from_string: function(s) {
@@ -2067,6 +2210,19 @@ let hub_props = {
 		if (typeof n === "number") {
 			if (this.pgndata && n >= 0 && n < this.pgndata.count()) {
 				this.load_pgn_object(this.pgndata.getrecord(n));
+				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	const element = document.getElementById('movelist'); 
+			setTimeout(() => {
+		var innerText = element.textContent;  
+			innerText = this.replaceUnicode(innerText)
+			var line0 = innerText.substring(0, 120);
+			this.ecoWriter(line0); console.log(line0)
+				}, 90);  n++;
+
+				
+				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				
+				
 			}
 			return;
 		}
@@ -2427,8 +2583,9 @@ let hub_props = {
 	send_title: function() {
 		let title = "Nibbler";
 		let root = this.tree.root;
+		var  gameDate = root.tags.Date; const date0 = this.replaceUnicode(gameDate)  ////gameDate.replace(/\.??/g, () => ""); 
 		if (root.tags && root.tags.White && root.tags.White !== "White" && root.tags.Black && root.tags.Black !== "Black") {
-			title += `: ${root.tags.White} - ${root.tags.Black}`;
+			title += ` ☙ ${root.tags.White} - ${root.tags.Black}  ${root.tags.Result} • ${date0}`;//title += `: ${root.tags.White} - ${root.tags.Black}`;
 		}
 		ipcRenderer.send("set_title", UnsafeStringHTML(title));		// Fix any &amp; and that sort of thing in the names.
 	},
@@ -2566,6 +2723,7 @@ let hub_props = {
 				let p = this.pgndata.getrecord(n);
 
 				let s;
+
 
 				if (p.tags.Result === "1-0") {
 					s = `${pad}${n}. <span class="blue">${p.tags.White || "Unknown"}</span> - ${p.tags.Black || "Unknown"}`;
