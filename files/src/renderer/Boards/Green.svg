@@ -1,0 +1,23 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,8,8" shape-rendering="crispEdges">
+  <defs>
+    <filter id="blurFilter" x="1" y="1" width="100%" height="100%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".0092" />
+    </filter>
+  </defs>
+  <g id="a">
+    <g id="b">
+      <g id="c">
+        <g id="d">
+          <rect width="1" height="1"  fill="rgba(80, 123, 90, .96)"  id="e" />
+          <use x="1" y="1" href="#e" xlink:href="#e" />
+     <rect y="1" width="1" height="1"  fill="rgba(80, 123, 90, .87)"  id="f" />
+          <use x="1" y="-1" href="#f" xlink:href="#f" />
+        </g>
+        <use x="2" href="#d" xlink:href="#d" />
+      </g>
+      <use x="4" href="#c" xlink:href="#c" />
+    </g>
+    <use y="2" href="#b" xlink:href="#b" />
+  </g>
+  <use y="4" href="#a" xlink:href="#a" />
+</svg>
