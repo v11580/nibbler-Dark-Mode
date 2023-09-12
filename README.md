@@ -11,7 +11,6 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 ![Screenshot](https://https://chesscalisthenics.com/IMG/nibblerShot.png)
 ## Features
-See screenshot here:  https://https://chesscalisthenics.com/IMG/nibblerShot.png
 
 * Figurine piece designations in notation
 * Shows Opening line name
@@ -23,6 +22,7 @@ See screenshot here:  https://https://chesscalisthenics.com/IMG/nibblerShot.png
 * PGN loading via menu, clipboard, or drag-and-drop.
 * Press the letter P for a new Puzzle
 * Press the letter M for a new Mini game
+* See screenshot here:  https://https://chesscalisthenics.com/IMG/nibblerShot.png
 
 
 ## Installation - Windows / Linux
