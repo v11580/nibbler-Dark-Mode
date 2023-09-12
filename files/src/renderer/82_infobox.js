@@ -1,6 +1,16 @@
 "use strict";
 
+
 let infobox_props = {
+	
+	 replaceChessPiecesWithUnicode: function(pv) {
+  return pv
+    .replace(/B/g, "♗")
+    .replace(/R/g, "♖")
+    .replace(/N/g, "♘")
+    .replace(/K/g, "♔")
+    .replace(/Q/g, "♕");
+},
 
 	draw_infobox: function(node, mouse_point, active_square, active_colour, hoverdraw_div, allow_inactive_focus, lookup_object) {
 
@@ -195,7 +205,7 @@ let infobox_props = {
 						numstring = `${movenum}... `;
 					}
 				}
-
+				nice_pv[i] = this.replaceChessPiecesWithUnicode(nice_pv[i]);
 				substrings.push(`<span id="infobox_${clicker_index++}" class="${spanclass}">${numstring}${nice_pv[i]} </span>`);
 				this.info_clickers.push({
 					move: info.pv[i],
@@ -233,7 +243,7 @@ let infobox_props = {
 			}
 
 			if (config.looker_api) {
-				let api_string = "API: ?";
+			let api_string = ""; /**redone * if blank *****/	
 				if (ltype && lookup_moves) {
 					let pov = null;
 					if (ltype === "chessdbcn") {
@@ -253,7 +263,7 @@ let infobox_props = {
 				if (config.infobox_stats_newline) {
 					substrings.push("<br>");
 				}
-				substrings.push(`<span class="gray">(${extra_stat_strings.join(', ')})</span>`);
+				substrings.push(`<span class="gray">• ${extra_stat_strings.join(', ')}</span>`);  /**redone**/
 			}
 
 			// Close the whole div...
