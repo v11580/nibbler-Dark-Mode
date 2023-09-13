@@ -263,7 +263,8 @@ let infobox_props = {
 				if (config.infobox_stats_newline) {
 					substrings.push("<br>");
 				}
-				substrings.push(`<span class="gray">• ${extra_stat_strings.join(', ')}</span>`);  /**redone**/
+				//substrings.push(`<span class="gray">• ${extra_stat_strings.join(', ')}</span>`);  /**redone**/
+				substrings.push(`<span class="gray">• ${extra_stat_strings.join(', ')}</span>`);   
 			}
 
 			// Close the whole div...
