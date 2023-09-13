@@ -4,9 +4,10 @@
 
 Nibbler is one of the best GUI's for chess game and position analyis. The program's built-in API for lichess makes an opening book an unnecessary luxury if you are below the master level. 
 
-Nibbler works with traditional engines like [Stockfish](https://stockfishchess.org/), too. (Ensure `MultiPV` is `1`, `Threads` (CPU) is set, and `Hash` is set (more is better), for maximum strength.)
+Nibbler works with traditional engines like [Stockfish](https://stockfishchess.org/).
 
-For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nibbler/releases) section. For help, the [Discord](https://discordapp.com/invite/pKujYxD) may be your best bet, or open an issue here.
+For prebuilt binary releases of the program, visit the [Releases](https://github.com/rooklift/nibbler/releases) section of the original Nibbler program. 
+Our source code changes the look of the user interface and adds some additional features.
 
 
 ![Screenshot](https://chesscalisthenics.com/IMG/nibblerShot.png)
