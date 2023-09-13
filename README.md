@@ -28,8 +28,12 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 ## Installation - Windows / Linux
 
-1) Download and install from the links below.
-2) Download our source and copy and replace items in the source direct
+1) Download and install from the releases below.
+
+2) Download our source code (green button above).
+
+3)  Copy the files in our src directory and paste them in Nibbler's (your intallation's) app directory.
+
 Some Windows and Linux standalone releases are uploaded to the [Releases](https://github.com/rooklift/nibbler/releases) section from time to time.
 
 *Alternatively*, it is possible to run Nibbler from source. This requires Electron, but has no other dependencies. If you have Electron installed (e.g. `npm install -g electron`) you can likely enter the `/src` directory, then do `electron .` to run it. Nibbler should be compatible with at least version 5 and above.
