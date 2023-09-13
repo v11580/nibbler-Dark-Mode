@@ -13,7 +13,7 @@ Please note that our source code only changes the look of the original user inte
 ![Screenshot](https://chesscalisthenics.com/IMG/D78.jpg)
 ## Features
 
-* Figurine piece designations in notation
+* Figurine piece designations in game and analysis notation
 * Shows Opening line name
 * Shows ECO transposition for individual fens, if there is a match.
 * Built in training data: 10,000 mini games.
