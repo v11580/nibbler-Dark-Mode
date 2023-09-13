@@ -36,7 +36,7 @@ function NewNode(parent, move, board_for_root) {		// move must be legal; board i
 
 function NewRoot(board) {					// Arg is a board (position) object, not a FEN
 
-var i  = Math.floor(Math.random() * 500) + 1; 
+var i  = Math.floor(Math.random() * 1069) + 1; 
 	if (!board) {
 		board = LoadFEN(EPDs[i])   //("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 	}
