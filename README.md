@@ -24,6 +24,7 @@ Our source code only changes the look of the original user interface and adds so
 * Press the letter P for a new Puzzle
 * Press the letter M to review a new Mini game
 * Analysis arrows
+* Green and Khaki colored boards are included.
 * See screenshot here:  https://chesscalisthenics.com/IMG/nibblerShot.png
 
 
