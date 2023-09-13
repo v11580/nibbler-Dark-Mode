@@ -2,7 +2,7 @@
 
 "By far the best ICCF analysis tool for Leela." &mdash; *jhorthos*
 
-Nibbler is one of the best GUI's for chess game and position analyis. The program's built-in API for lichess, makes an opening book an unnecessary luxury. 
+Nibbler is one of the best GUI's for chess game and position analyis. The program's built-in API for lichess makes an opening book an unnecessary luxury. 
 
 Nibbler works with traditional engines like [Stockfish](https://stockfishchess.org/), too. (Ensure `MultiPV` is `1`, `Threads` (CPU) is set, and `Hash` is set (more is better), for maximum strength.)
 
