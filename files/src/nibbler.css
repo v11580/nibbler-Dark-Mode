@@ -5,7 +5,7 @@ html {
 /*55_winrate line 45  "#524839";**/
 
 body {
-	background-color: #1a1a1a;#080808;
+	background-color: #1a1a1a;
 	border: 0;
 	color: #bababa; 
 	cursor: default;
@@ -238,7 +238,7 @@ ul {
 }
 
 .pink {
-	color: rgba(150,130,110, .99); #877c6c; #9c7c55;  #877c6c; #ffaaaa;  /* 82_infobox black move colors*/
+	color: rgba(150,130,110, .99);   /* 82_infobox black move colors*/
 }
 
 .white {
