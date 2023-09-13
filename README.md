@@ -10,7 +10,7 @@ For prebuilt binary releases of the program, visit the [Releases](https://github
 Our source code only changes the look of the original user interface and adds some additional features.
 
 
-![Screenshot](https://chesscalisthenics.com/IMG/nibblerShot.png)
+![Screenshot](https://chesscalisthenics.com/IMG/D78.png)
 ## Features
 
 * Figurine piece designations in notation
