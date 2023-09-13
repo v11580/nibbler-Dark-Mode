@@ -17,9 +17,9 @@ Please note that our source code only changes the look of the original user inte
 * Shows Opening line name
 * Shows ECO transposition for individual fens, if there is a match.
 * Built in training data: 10,000 mini games.
-* 1,100 Puzzles
+* 1,069 Puzzles
 * Upon loading, a random puzzle is shown
-* The puzzles consist of 600 ECM positions and 500 mate in 2s, all wtm.
+* The puzzles consist of 610 ECM positions and the rest are mate in 2s. All positions are white to move.
 * PGN loading via menu, clipboard, or drag-and-drop.
 * Press the letter P for a new Puzzle
 * Press the letter M to review a new Mini game
