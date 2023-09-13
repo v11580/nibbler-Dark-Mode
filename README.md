@@ -25,7 +25,7 @@ Please note that our source code only changes the look of the original user inte
 * Press the letter M to review a new Mini game
 * Analysis arrows
 * Green and Khaki colored boards are included.
-* See screenshot here:  https://chesscalisthenics.com/IMG/nibblerShot.png
+* See a full-screen screenshot here:  https://chesscalisthenics.com/IMG/nibblerShot.png
 
 
 ## Installation - Windows / Linux
