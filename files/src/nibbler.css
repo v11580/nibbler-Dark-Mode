@@ -132,9 +132,8 @@ input[type=text]:focus {
 	font-family: consolas, monospace;
 	font-size: 50%;
 	pointer-events: auto;
-	user-select: auto;
-}
 
+}
 #movelist {
 	grid-area: g;
 	margin: 1em 15em 1em 13.5em;
@@ -605,7 +604,7 @@ ul {
 	color: #678; #829bbd;
 }
 .liGreen {
-	color: #639363; font-size:85%; /***75_looker* Lichess freq. it's really green**/
+	color: #639363; font-size:85%; /***75_looker* Lichess green**/
 }
 
 .infoline {
