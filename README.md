@@ -28,6 +28,8 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 ## Installation - Windows / Linux
 
+1) Download and install from the links below.
+2) Download our source and copy and replace items in the source direct
 Some Windows and Linux standalone releases are uploaded to the [Releases](https://github.com/rooklift/nibbler/releases) section from time to time.
 
 *Alternatively*, it is possible to run Nibbler from source. This requires Electron, but has no other dependencies. If you have Electron installed (e.g. `npm install -g electron`) you can likely enter the `/src` directory, then do `electron .` to run it. Nibbler should be compatible with at least version 5 and above.
@@ -45,7 +47,7 @@ curl -L https://raw.githubusercontent.com/rooklift/nibbler/master/files/scripts/
 ## Installation - Mac
 
 1) Download and install the original version from the links below. 
-2)Copy and replace the files from the source directory of this fork. 
+2)Copy and replace the files from the src directory of this fork to Nibbler's app directory. 
 
 Mac builds have been made by [twoplan](https://github.com/twoplan/Nibbler-for-macOS) and [Jac-Zac](https://github.com/Jac-Zac/Nibbler_MacOS) - the latter is probably more up-to-date.
 
