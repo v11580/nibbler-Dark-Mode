@@ -34,7 +34,7 @@ Our source code only changes the look of the original user interface and adds so
 
 2) Download our source code (green button above).
 
-3)  Copy the files in our src directory (download 2) and paste them (replace all) in Nibbler's (your intallation's) app directory.
+3)  Copy the files in our src directory (download no. 2) and paste them (replace all) in Nibbler's (your intallation's) app directory.
 
 Some Windows and Linux standalone releases are uploaded to the [Releases](https://github.com/rooklift/nibbler/releases) section from time to time.
 
