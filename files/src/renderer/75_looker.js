@@ -270,7 +270,8 @@ let lichess_move_props = {
 		let win_string = (ev * 100).toFixed(1);
 		let weight_string = (100 * this.total / this.position_total).toFixed(0);
 
-		return `API win: <span class="blue">${win_string}%</span> freq: <span class="blue">${weight_string}%</span> [${NString(this.total)}]`;
+		//return `API win: <span class="blue">${win_string}%</span> freq: <span class="blue">${weight_string}%</span> [${NString(this.total)}]`;
+				return `win: <span class="darkgray">${win_string}%</span> freq: <span class="liGreen">${weight_string}%</span> <span class="darkgray">${NString(this.total)}</span>`;//***redone**/
 	},
 
 	sort_score: function() {
