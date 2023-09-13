@@ -94,7 +94,7 @@ body {
 	font-size: 90%; 
 }
 
-#infobox {       //shows pv lines
+#infobox {       /* shows engine pv lines*/
 	grid-area: d;    /*75_looker**/
 	margin: 1em 1em 0 3em;
 	display: block;
@@ -269,7 +269,7 @@ ul {
 	color: #678; #829bbd;
 }
 .liGreen {
-	color: #639363; font-size:85%; /***75_looker* Lichess freq. it's really green**/
+	color: #639363; font-size:85%; /***75_looker* Lichess freq.**/
 }
 
 .infoline {
