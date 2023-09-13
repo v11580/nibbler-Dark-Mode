@@ -32,7 +32,7 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 2) Download our source code (green button above).
 
-3)  Copy the files in our src directory and paste them in Nibbler's (your intallation's) app directory.
+3)  Copy the files in our src directory (download 2) and paste them in Nibbler's (your intallation's) app directory.
 
 Some Windows and Linux standalone releases are uploaded to the [Releases](https://github.com/rooklift/nibbler/releases) section from time to time.
 
