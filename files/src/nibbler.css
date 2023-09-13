@@ -99,7 +99,7 @@ body {
 	margin: 1em 1em 0 3em;
 	display: block;
 	color: #cccccc;						/* only used for Lc0 stderr output at startup */
-	font-family: "CA Chess2", "FigurineCB ArieSP", consolas, monospace; font-weight: 400px;
+	font-family: consolas, monospace; font-weight: 400px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
