@@ -44,6 +44,9 @@ curl -L https://raw.githubusercontent.com/rooklift/nibbler/master/files/scripts/
 
 ## Installation - Mac
 
+1) Download and install the original version from the links below. 
+2)Copy and replace the files from the source directory of this fork. 
+
 Mac builds have been made by [twoplan](https://github.com/twoplan/Nibbler-for-macOS) and [Jac-Zac](https://github.com/Jac-Zac/Nibbler_MacOS) - the latter is probably more up-to-date.
 
 ## Advanced engine options
