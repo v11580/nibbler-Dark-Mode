@@ -30,7 +30,7 @@ Our source code only changes the look of the original user interface and adds so
 
 ## Installation - Windows / Linux
 
-1) Download and install from the releases below. In most cases, you can just unzip the files and start using the program.
+1) Download and install from the release links below. In most cases, you can just unzip the files and start using the program.
 
 2) Download our source code (green button above).
 
