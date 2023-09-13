@@ -14,7 +14,7 @@ For prebuilt binary releases, see the [Releases](https://github.com/rooklift/nib
 
 * Figurine piece designations in notation
 * Shows Opening line name
-* Shows ECO transposition of individual fens
+* Shows ECO transposition for individual fens, if there is a match.
 * Built in training data: 10,000 mini games.
 * 1,100 Puzzles
 * Upon loading, a random puzzle is shown
