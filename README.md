@@ -6,8 +6,8 @@ Nibbler is one of the best GUI's for chess game and position analyis. The progra
 
 Nibbler works with traditional engines like [Stockfish](https://stockfishchess.org/).
 
-For prebuilt binary releases of the program, visit the [Releases](https://github.com/rooklift/nibbler/releases) section of the original Nibbler program. 
-Our source code only changes the look of the original user interface and adds some additional features.
+Please note that our source code only changes the look of the original user interface and adds additional features. You will need a prebuilt binary release of the original program. visit the [Releases](https://github.com/rooklift/nibbler/releases) section of the original Nibbler program. 
+
 
 
 ![Screenshot](https://chesscalisthenics.com/IMG/D78.jpg)
