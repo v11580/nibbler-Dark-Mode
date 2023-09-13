@@ -52,8 +52,8 @@ exports.defaults = {
 	"actual_move_colour": "#cc9966",
 
 	"searchmoves_buttons": true,
-	"focus_on_text": "focused:",
-	"focus_off_text": "focus?",
+	"focus_on_text": "☙:",
+	"focus_off_text": "☙",
 
 	"accept_bounds": false,
 	"max_info_lines": null,						// Hidden option
