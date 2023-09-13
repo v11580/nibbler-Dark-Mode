@@ -140,7 +140,7 @@ input[type=text]:focus {
 	margin: 1em 15em 1em 13.5em;
 	display: block;
 	color: #677; /*variation*/
-	font-family: consolas, monospace;
+	font-family: consolas, monospace; font-weight: 400px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding-right: 10px;				/* so the text doesn't get so near the scroll bar */
