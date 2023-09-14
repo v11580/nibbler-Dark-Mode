@@ -42,8 +42,8 @@ exports.defaults = {
 
 	"light_square": "rgba(80, 123, 90, .96)",
 	"dark_square": "rgba(80, 123, 90, .87)",
-	"active_square": "#66aaaa",
-	"move_squares_with_alpha": "#ffff0026",
+	"active_square": "transparent",
+	"move_squares_with_alpha": "transparent",
 
 	"best_colour": "#66aaaa",
 	"good_colour": "#66aa66",
