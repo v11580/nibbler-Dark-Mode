@@ -1,6 +1,8 @@
 # Nibbler
 
-Nibbler is one of the best open-source GUI's for chess game and position analyis. The program's built-in API for the Lichess games database makes an opening book an unnecessary luxury if you are below the master level. The screenshot shows engine lines and current depth of analysis. At the end of the line, the Lichess API shows the win percentage, the frequency the move is played, and the number of games in the live, Lichess Masters database. 
+Nibbler is one of the best open-source GUI's for chess game and position analyis. 
+
+The program's built-in API for the Lichess games database makes an opening book an unnecessary luxury if you are below the master level. The screenshot shows engine lines and current depth of analysis. At the end of the line, the Lichess API shows the win percentage, the frequency the move is played, and the number of games in the live, Lichess Masters database. 
 
 Nibbler works with traditional engines like [Stockfish](https://stockfishchess.org/).
 
