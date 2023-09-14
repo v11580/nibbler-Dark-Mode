@@ -38,9 +38,7 @@ Please note that our source code only changes the look of the original user inte
 
 Some Windows and Linux standalone releases are uploaded to the [Releases](https://github.com/rooklift/nibbler/releases) section from time to time.
 
-*Alternatively*, it is possible to run Nibbler from source. This requires Electron, but has no other dependencies. If you have Electron installed (e.g. `npm install -g electron`) you can likely enter the `/src` directory, then do `electron .` to run it. Nibbler should be compatible with at least version 5 and above.
 
-You could also build a standalone app. See comments inside the Python script `builder.py` for info.
 
 ## Linux install script
 
@@ -49,28 +47,6 @@ Linux users can make use of the following *one-liner* to install the latest vers
 ```bash
 curl -L https://raw.githubusercontent.com/rooklift/nibbler/master/files/scripts/install.sh | bash
 ```
-
-## Installation - Mac
-
-1) Download and install the original version from the Release links below. 
-2)Copy and replace the files from the src directory of this fork to Nibbler's app directory. 
-
-Mac builds have been made by [twoplan](https://github.com/twoplan/Nibbler-for-macOS) and [Jac-Zac](https://github.com/Jac-Zac/Nibbler_MacOS) - the latter is probably more up-to-date.
-
-## Advanced engine options
-
-Most people won't need them, but all of Leela's engine options can be set in two ways:
-
-* Leela automatically loads options from a file called `lc0.config` at startup - see [here](https://lczero.org/play/configuration/flags/#config-file).
-* Nibbler will send UCI options specified in Nibbler's own `engines.json` file (which you can find via the Dev menu).
-
-## Hints and tips
-
-An option to enable the UCI `searchmoves` feature is available in the Analysis menu. Once enabled, one or more moves can be specified as moves to focus on; Leela will ignore other moves. This is useful when you think Leela isn't giving a certain move enough attention.
-
-Leela forgets much of the evaluation if the position changes. To mitigate this, an option in the Analysis menu allows you to hover over a PV (on the right) and see it play out on the board, without changing the position we're actually analysing. You might prefer to halt Leela while doing this, so that the PVs don't change while you're looking at them.
-
-Leela running out of RAM can be a problem if searches go on too long. You might like to set a reasonable node limit (in the Engine menu), perhaps 10 million or so.
 
 ## Thanks
 
