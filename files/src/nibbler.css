@@ -456,16 +456,16 @@ input[type=text]:focus {
 
 #fenbox { 
 	grid-area: f;
-	margin: -1em 1em 0 13.5em;
+	margin: -1em 55 0 13.5em;
 	background-color: #1a1a1a;
 	border: none;
 	caret-color: white;
 	color: #242424; 
-	d-isplay: block;
+	display: block;
 	font-family: consolas, monospace;
 	font-size: 50%;
 	pointer-events: auto;
-	user-select: auto;
+	0user-select: auto;
 }
 
 #movelist {
