@@ -123,7 +123,7 @@ input[type=text]:focus {
 
 #fenbox { 
 	grid-area: f;
-	margin: -1em 55em 0 13.5em;
+	margin: -1em 51em 0 13.5em;
 	background-color: #1a1a1a;
 	border: none;
 	caret-color: white;
