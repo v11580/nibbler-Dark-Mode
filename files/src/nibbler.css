@@ -294,15 +294,15 @@ ul {
   /*analysis line */
 }
 
-span.movelist_highlight_blue { /*pgn current move -- brown*/
+span.movelist_highlight_blue { /* movelist current move -- brown*/
 	background-color:#524839;
-	color: #EEE; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
+	color: #f5f5dc; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
 	
 }
 
 span.movelist_highlight_yellow {
-	background-color: #444422;
-	color: #99cccc;  border-radius: 2px;
+	background-color: #565030;
+	color: #f3e5ab99; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
 }
 
 span.nobr {
