@@ -303,7 +303,7 @@ span.movelist_highlight_blue { /*pgn current move -- brown*/
 
 span.movelist_highlight_yellow {
 	background-color: #383855;
-	color: #f5f5dc ;  
+	color: #f5f5d9 ;  
 	border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
 }
 
