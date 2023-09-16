@@ -296,13 +296,15 @@ ul {
 
 span.movelist_highlight_blue { /*pgn current move -- brown*/
 	background-color:#524839;
-	color: #f5f5dc; border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
+	color: #f5f5dc; 
+	border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
 	
 }
 
 span.movelist_highlight_yellow {
-	background-color: #565030;
-	color: #f3e5ab99;  border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
+	background-color: #383855;
+	color: #f5f5dc ;  
+	border-radius: 2.5px; padding-left:3px; margin-right: 3.5px;
 }
 
 span.nobr {
