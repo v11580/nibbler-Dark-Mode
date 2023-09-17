@@ -30,7 +30,7 @@ Please note that our source code only changes the look of the original user inte
 
 ## Installation - Windows / Linux
 
-1) Download and install from the release links below. In most cases, you can just unzip the files and start using the program. This will give you the original program files including the Nibbler executable.
+1) Download and install from the release link below. In most cases, you can just unzip the files and start using the program. This will give you the original program files including the Nibbler executable.
 
 2) Download our source code (green button above).
 
