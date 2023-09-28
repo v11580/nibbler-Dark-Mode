@@ -52,7 +52,7 @@ exports.defaults = {
 	"actual_move_colour": "#cc9966",
 
 	"searchmoves_buttons": true,
-	"focus_on_text": "☙:",
+	"focus_on_text": "☙ !?",
 	"focus_off_text": "☙",
 
 	"accept_bounds": false,
